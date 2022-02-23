@@ -1,0 +1,7 @@
+lectures
+*.pdf
+*.exe
+*.exec
+*.out
+*.batch
+.vscode
