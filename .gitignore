@@ -5,3 +5,4 @@ lectures
 *.out
 *.batch
 .vscode
+*.txt
