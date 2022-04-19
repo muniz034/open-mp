@@ -42,9 +42,10 @@ double p_riemman(double deltaX, int s, int n){
     double rsum = 0, psum = 0;
     int i = 0;
 
-    #pragma omp parallel shared(rsum, deltaX, s, n) private(i, psum)
+    #pragma omp parallel shared(rsum, deltaX, s, n) firstprivate(i, psum)
     {
-        #pragma omp for
+        #pragma omp for nowait
+        // #pragma omp for nowait schedule(dynamic, 160)
         for(i = 0; i < n; i++) psum += f((i + s) * deltaX) * deltaX;
 
         #pragma omp critical

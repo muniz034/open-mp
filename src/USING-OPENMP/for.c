@@ -21,9 +21,8 @@ int main(int argc, char **argv){
     double start = 0, end = 0;
 
 	start = omp_get_wtime();
-    #pragma omp parallel shared(n,a,b) private(i,j)
+    #pragma omp parallel shared(n,a,b) firstprivate(i,j)
     {
-        j = 0;
         #pragma omp for
         for (i=0; i<n; i++){
             if(j == 0) printf("[thread:%d start:%d] START a\n", omp_get_thread_num(), i);
@@ -43,8 +42,8 @@ int main(int argc, char **argv){
 
     }
     end = omp_get_wtime();
-    printf("b:\n");
-    printArray(b, n);
+    // printf("b:\n");
+    // printArray(b, n);
 
     printf("%f\n", end - start);
 
