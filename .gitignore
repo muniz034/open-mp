@@ -6,3 +6,4 @@ lectures
 *.batch
 .vscode
 *.txt
+*.csv
