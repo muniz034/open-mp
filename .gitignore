@@ -7,3 +7,5 @@ lectures
 .vscode
 *.txt
 *.csv
+.Rproj.user
+.viz
